@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "1abfaf62-fbd2-4d23-b75f-63058dc95d43",
+		"name": "xyinc",
+		"description": "Api rest para persistir entidade e seus registros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EntityManutenção",
+			"item": [
+				{
+					"name": "entityAdd",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Pessoa\",\r\n\t\"attributes\": {\r\n\t\t\"nome\": \"texto\",\r\n\t\t\"idade\": \"numero\",\r\n\t\t\"saldo\": \"valor\",\r\n\t\t\"aniversario\": \"data\",\r\n\t\t\"ativo\": \"ativo\"\r\n\t}\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/entity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"entity"
+							]
+						},
+						"description": "Salvar uma entidade"
+					},
+					"response": []
+				},
+				{
+					"name": "entityListAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/entity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"entity"
+							]
+						},
+						"description": "Lista de todas as entidades"
+					},
+					"response": []
+				},
+				{
+					"name": "entityList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/entity/5d5191f8dbe56e384c60d531",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"entity",
+								"5d5191f8dbe56e384c60d531"
+							]
+						},
+						"description": "Recuperar uma entidade"
+					},
+					"response": []
+				},
+				{
+					"name": "entityDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/entity/5d5191f8dbe56e384c60d531",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"entity",
+								"5d5191f8dbe56e384c60d531"
+							]
+						},
+						"description": "Remover uma entidade"
+					},
+					"response": []
+				}
+			],
+			"description": "Operações possiveis com as entidades"
+		},
+		{
+			"name": "Entity",
+			"item": [
+				{
+					"name": ":entitySave",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"Joao\",\r\n\t\"idade\": 5,\r\n\t\"saldo\": 110.5,\r\n\t\"aniversario\": \"10/10/2012\",\r\n\t\"ativo\": true\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/Pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Pessoa"
+							]
+						},
+						"description": "Salvar um registro de uma entidade"
+					},
+					"response": []
+				},
+				{
+					"name": ":entityListAll",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/Pessoa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Pessoa"
+							]
+						},
+						"description": "Recuperar todos os registros de uma entidade"
+					},
+					"response": []
+				},
+				{
+					"name": ":entityList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/Pessoa/99d9639a-9f20-4579-95e6-cd26303fbf0d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Pessoa",
+								"99d9639a-9f20-4579-95e6-cd26303fbf0d"
+							]
+						},
+						"description": "Recuperar um registro de uma entidade pelo ID"
+					},
+					"response": []
+				},
+				{
+					"name": ":entityRemove",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/Pessoa/99d9639a-9f20-4579-95e6-cd26303fbf0d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Pessoa",
+								"99d9639a-9f20-4579-95e6-cd26303fbf0d"
+							]
+						},
+						"description": "Remover um registro de uma entidade pelo ID"
+					},
+					"response": []
+				},
+				{
+					"name": ":entityUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"nome\": \"Roberto\",\r\n\t\"idade\": 5,\r\n\t\"saldo\": 110.5,\r\n\t\"aniversario\": \"10/10/2012\",\r\n\t\"ativo\": true\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/Pessoa/99d9639a-9f20-4579-95e6-cd26303fbf0d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Pessoa",
+								"99d9639a-9f20-4579-95e6-cd26303fbf0d"
+							]
+						},
+						"description": "Alterar um registro de uma entidade pelo ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Operações possíveis com as entidades geradas"
+		}
+	]
+}
